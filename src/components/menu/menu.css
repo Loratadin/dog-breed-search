@@ -1,0 +1,8 @@
+.menu-container {
+  position: absolute;
+  height: 70%;
+  width: 20%;
+  left: 4%;
+  top: 15%;
+  background: rgba(4, 37, 41, 0.35);
+}
