@@ -1,10 +1,16 @@
 import React from 'react';
 import './form.css';
 
-const Form = () => {
+const Form = props => {
     return(
         <form>
-            <input type="text"/>
+        <select>
+            {props.breedsList ? props.breedsList.map((breed) => {
+                return(
+                    <option value={breed}>{breed}</option>
+                );
+            }) : null}
+        </select>
             <button>Go</button>
         </form>
     );
