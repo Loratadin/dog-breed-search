@@ -5,9 +5,9 @@ const Form = props => {
     return(
         <form>
         <select>
-            {props.breedsList ? props.breedsList.map((breed) => {
+            {props.breedsList ? props.breedsList.map((breed, index) => {
                 return(
-                    <option value={breed}>{breed}</option>
+                    <option value={breed} key={index}>{breed}</option>
                 );
             }) : null}
         </select>
