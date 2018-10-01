@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Menu from './components/menu/Menu';
 import Form from './components/form/Form';
+import BreedImage from './components/breed-image/BreedImage';
 
 class App extends Component {
     state = {
@@ -23,6 +24,7 @@ class App extends Component {
             <div className="App">
                 <Menu/>
                 <Form breedsList={this.state.breedsList} />
+                <BreedImage/>
             </div>
         );
     }
