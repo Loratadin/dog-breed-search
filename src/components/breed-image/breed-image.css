@@ -1,0 +1,14 @@
+.image-container {
+  position: absolute;
+  height: 300px;
+  width: 350px;
+  border: 8px solid #d4bf91;
+  border-radius: 2px;
+  right: 9%;
+  top: 30%;
+}
+.image-card {
+  width: 100%;
+  display: box;
+  box-sizing: border-box;
+}
