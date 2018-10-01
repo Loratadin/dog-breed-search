@@ -4,7 +4,9 @@ import './breed-image.css';
 class BreedImage extends Component {
     render() {
         return(
-            <div></div>
+            <div className="image-container">
+                <img className="image" alt="dog"/>
+            </div>
         );
     }
 }
