@@ -3,7 +3,7 @@ import "./breed-image.css";
 
 class BreedImage extends Component {
   state = {
-    imageUrl: null,
+    imageUrl: require('../../assets/custom.jpg'),
     selectedBreed: null
   };
   componentDidUpdate() {
