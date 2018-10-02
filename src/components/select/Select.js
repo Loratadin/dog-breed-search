@@ -1,15 +1,15 @@
 import React from 'react';
-import './form.css';
+import './select.css';
 import '../breed-image/breed-image.css';
 
-const Form = props => {
+const Select = props => {
 
     const handleChange = (event) => {
         props.onSelect(event.target.value);
       }
 
     return(
-        <form>
+        <div className="select-container">
         <select onChange={handleChange}>
             {props.breedsList ? props.breedsList.map((breed, index) => {
                 return(
@@ -17,8 +17,8 @@ const Form = props => {
                 );
             }) : null}
         </select>
-        </form>
+        </div>
     );
 }
 
-export default Form;
+export default Select;

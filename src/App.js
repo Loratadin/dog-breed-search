@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Menu from './components/menu/Menu';
-import Form from './components/form/Form';
+import Select from './components/select/Select';
 import BreedImage from './components/breed-image/BreedImage';
 
 class App extends Component {
@@ -29,7 +29,7 @@ class App extends Component {
         return (
             <div className="App">
                 <Menu/>
-                <Form breedsList={this.state.breedsList} onSelect={this.selectHandler}/>
+                <Select breedsList={this.state.breedsList} onSelect={this.selectHandler}/>
                 <BreedImage breed={this.state.selectedBreed}/>
             </div>
         );
