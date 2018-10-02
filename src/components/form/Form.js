@@ -17,7 +17,6 @@ const Form = props => {
                 );
             }) : null}
         </select>
-            <button>Go</button>
         </form>
     );
 }

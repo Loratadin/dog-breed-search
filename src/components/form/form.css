@@ -14,15 +14,3 @@ select {
   border-style: none;
   border: 1px solid #d4bf91;
 }
-button {
-  height: 100%;
-  width: 12%;
-  font-family: inherit;
-  font-size: 18px;
-  color: #44a8e2;
-  background-color: #d4bf91;
-  border-radius: 8px;
-  border: 1px solid #44a8e2;
-  padding-top: 4px;
-  margin-left: 7px;
-}

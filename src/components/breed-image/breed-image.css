@@ -8,7 +8,10 @@
   top: 30%;
 }
 .image-card {
+  position: absolute;
+  display: block;
+  object-fit: cover;
   width: 100%;
-  display: box;
+  height: 100%;
   box-sizing: border-box;
 }
