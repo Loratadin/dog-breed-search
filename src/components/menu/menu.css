@@ -1,46 +1,57 @@
 .menu-container {
-  position: absolute;
-  height: 70%;
-  width: 20%;
-  left: 4%;
-  top: 15%;
-  background: rgba(4, 37, 41, 0.35);
-  color: white;
+  display: none;
 }
-.menu-logo {
-  width: 50%;
-  margin: 7% auto 0 auto;
-  text-align: center;
-}
-.menu-logo-img {
-  width: 100%;
-  display: block;
-  box-sizing: border-box;
-}
-.menu-title {
-  font-size: 30px;
-  text-align: center;
-  margin-top: 7%;
-}
-.menu-github,
-.menu-twitter {
-  position: absolute;
-  font-size: 19px;
-  margin-left: 12%;
-  text-decoration: none;
-  color: white;
-  cursor: pointer;
-  transition: all 0.5s;
-}
-.menu-github:hover,
-.menu-twitter:hover {
-  color: #d4bf91;
-  transform: scale(1.1);
-}
+@media /* desktop */ (min-width: 769px) {
+  .menu-container {
+    position: absolute;
+    display: block;
+    height: 70%;
+    width: 20%;
+    left: 4%;
+    top: 15%;
+    background: rgba(4, 37, 41, 0.35);
+    color: white;
+  }
+  .menu-logo {
+    width: 50%;
+    margin: 7% auto 0 auto;
+    text-align: center;
+  }
+  .menu-logo-img {
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+  }
+  .menu-title {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 7%;
+  }
+  .menu-github,
+  .menu-twitter {
+    position: absolute;
+    font-size: 13px;
+    margin-left: 12%;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    transition: all 0.5s;
+  }
+  .menu-github:hover,
+  .menu-twitter:hover {
+    color: #d4bf91;
+    transform: scale(1.1);
+  }
 
-.menu-github {
-  bottom: 14%;
+  .menu-github {
+    bottom: 14%;
+  }
+  .menu-twitter {
+    bottom: 7%;
+  }
 }
-.menu-twitter {
-  bottom: 7%;
+@media /* XL desktop */ (min-width: 1025px) {
+  .menu-title {
+    font-size: 30px;
+  }
 }
