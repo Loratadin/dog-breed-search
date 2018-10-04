@@ -54,4 +54,8 @@
   .menu-title {
     font-size: 30px;
   }
+  .menu-github,
+  .menu-twitter {
+    font-size: 20px;
+  }
 }
