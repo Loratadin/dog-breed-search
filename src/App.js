@@ -13,11 +13,19 @@ class App extends Component {
         this.fetchAllBreeds();
     }
     fetchAllBreeds = async () => {
-        const response = await fetch('https://dog.ceo/api/breeds/list/all');
-        const data = await response.json();
-        this.setState({
-            breedsList: Object.keys(data.message)
-        })
+        try { // try to get data
+            const response = await fetch('https://dog.ceo/api/breeds/list/all');
+            if (response.ok) { // check if status code is 200
+                const data = await response.json();
+                this.setState({
+                    breedsList: Object.keys(data.message)
+                })
+            } else {
+                alert('Sorry, can not load the data')
+            }
+        } catch (e) { // code will jump here if there is a network problem
+            alert('Sorry, can not load the data')
+        }
     }
     selectHandler = (breed) => {
         this.setState({
