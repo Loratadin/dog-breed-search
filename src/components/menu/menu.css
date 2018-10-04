@@ -2,11 +2,44 @@
   display: none;
   position: fixed;
   top: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   z-index: 1;
+  background: rgba(4, 37, 41, 0.85);
+  color: white;
 }
-.menu-container--opened {
+.menu-logo {
+  width: 150px;
+  margin: 7% auto 0 auto;
+  text-align: center;
+}
+.menu-logo-img {
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+}
+.menu-title {
+  font-size: 20px;
+  text-align: center;
+  margin: 7% auto;
+}
+.menu-github,
+.menu-twitter {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  font-size: 13px;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.menu-github:hover,
+.menu-twitter:hover {
+  color: #d4bf91;
+  transform: scale(1.1);
+}
+.menu-container.opened {
   display: block;
 }
 .burger {
@@ -48,49 +81,25 @@
 }
 @media /* desktop */ (min-width: 769px) {
   .menu-container {
-    position: absolute;
     display: block;
+    position: absolute;
     height: 70%;
     width: 20%;
     left: 4%;
     top: 15%;
     background: rgba(4, 37, 41, 0.35);
-    color: white;
   }
   .burger {
     display: none;
   }
   .menu-logo {
     width: 50%;
-    margin: 7% auto 0 auto;
-    text-align: center;
-  }
-  .menu-logo-img {
-    width: 100%;
-    display: block;
-    box-sizing: border-box;
-  }
-  .menu-title {
-    font-size: 20px;
-    text-align: center;
-    margin-top: 7%;
   }
   .menu-github,
   .menu-twitter {
     position: absolute;
-    font-size: 13px;
     margin-left: 12%;
-    text-decoration: none;
-    color: white;
-    cursor: pointer;
-    transition: all 0.5s;
   }
-  .menu-github:hover,
-  .menu-twitter:hover {
-    color: #d4bf91;
-    transform: scale(1.1);
-  }
-
   .menu-github {
     bottom: 14%;
   }
