@@ -6,17 +6,36 @@ const Select = props => {
 
     const handleChange = (event) => {
         props.onSelect(event.target.value);
-      }
+    }
+
+    const getLoadingView = () => {
+        return <div>Skeleton</div>
+    }
+
+    const getErrorView = () => {
+        return alert('Sorry, can not load the data')
+    }
+
+    const getSelectView = () => {
+        return (
+            <select onChange={handleChange}>
+                {
+                    props.breedsList.map((breed, index) => {
+                        return(
+                            <option value={breed} key={index}>{breed}</option>
+                        );
+                    })
+                }
+            </select>
+        )
+    }
+
+
 
     return(
         <div className="select-container">
-        <select onChange={handleChange}>
-            {props.breedsList ? props.breedsList.map((breed, index) => {
-                return(
-                    <option value={breed} key={index}>{breed}</option>
-                );
-            }) : null}
-        </select>
+            {props.breedsList ? getSelectView() : getLoadingView()}
+            {props.isError ? getErrorView : null}
         </div>
     );
 }

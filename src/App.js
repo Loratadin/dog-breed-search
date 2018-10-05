@@ -7,7 +7,8 @@ import BreedImage from './components/breed-image/BreedImage';
 class App extends Component {
     state = {
         breedsList: null,
-        selectedBreed: null
+        selectedBreed: null,
+        error: false
     }
     componentDidMount() {
         this.fetchAllBreeds();
@@ -21,9 +22,15 @@ class App extends Component {
                     breedsList: Object.keys(data.message)
                 })
             } else {
+                this.setState({
+                    error: true
+                })
                 alert('Sorry, can not load the data')
             }
         } catch (e) { // code will jump here if there is a network problem
+            this.setState({
+                error: true
+            })
             alert('Sorry, can not load the data')
         }
     }
@@ -37,7 +44,7 @@ class App extends Component {
         return (
             <div className="App">
                 <Menu/>
-                <Select breedsList={this.state.breedsList} onSelect={this.selectHandler}/>
+                <Select breedsList={this.state.breedsList} onSelect={this.selectHandler} isError={this.state.error}/>
                 <BreedImage breed={this.state.selectedBreed}/>
             </div>
         );
