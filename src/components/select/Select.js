@@ -9,7 +9,7 @@ const Select = props => {
     }
 
     const getLoadingView = () => {
-        return <div>Skeleton</div>
+        return <div className="loading"><img className="loading-gif" alt="Loading..." src={require('../../assets/loading.gif')}/></div>
     }
 
     const getErrorView = () => {

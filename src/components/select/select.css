@@ -15,6 +15,13 @@ select {
   border-style: none;
   border: 1px solid #d4bf91;
 }
+.loading {
+  width: 100px;
+}
+.loading-gif {
+  display: block;
+  width: 100%;
+}
 @media /* desktop */ (min-width: 769px) {
   .select-container {
     top: 13%;
