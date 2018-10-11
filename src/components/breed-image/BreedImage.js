@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import "./breed-image.css";
+import React, { Component } from 'react';
+import './breed-image.css';
 
 class BreedImage extends Component {
   state = {
