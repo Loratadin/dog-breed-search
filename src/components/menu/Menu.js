@@ -18,11 +18,11 @@ class Menu extends Component {
         render() {
             return (
                 <div>
-                    <div id={'burger'} className={'burger'} onClick={this.mobile}>
-                        <div className={'lines'}>
-                            <div className={'line'}></div>
-                            <div className={'line'}></div>
-                            <div className={'line'}></div>
+                    <div id={'burger'} className="burger" onClick={this.mobile}>
+                        <div className="lines">
+                            <div className="line"></div>
+                            <div className="line"></div>
+                            <div className="line"></div>
                         </div>
                     </div>
                     <div id={'menu-container'} className="menu-container">
