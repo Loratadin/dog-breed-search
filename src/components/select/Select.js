@@ -35,7 +35,7 @@ const Select = props => {
     return(
         <div className="select-container">
             {props.breedsList ? getSelectView() : getLoadingView()}
-            {props.isError ? getErrorView : null}
+            {props.isError ? getErrorView() : null}
         </div>
     );
 }
