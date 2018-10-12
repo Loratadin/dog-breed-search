@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './menu.css';
 
 class Menu extends Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
 
         this.toggleMobileClasses = () => {
             let hamburgerIcon = document.getElementById('burger');
@@ -11,14 +11,11 @@ class Menu extends Component {
             let mobileMenu = document.getElementById('menu-container');
             mobileMenu.classList.toggle('opened');
         }
-        this.mobile = () => {
-            this.toggleMobileClasses();
-        }
     }
         render() {
             return (
                 <div>
-                    <div id={'burger'} className="burger" onClick={this.mobile}>
+                    <div id={'burger'} className="burger" onClick={this.toggleMobileClasses}>
                         <div className="lines">
                             <div className="line"></div>
                             <div className="line"></div>
