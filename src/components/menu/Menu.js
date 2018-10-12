@@ -1,21 +1,16 @@
 import React, { Component } from 'react';
 import './menu.css';
 
-class Menu extends Component {
-    constructor() {
-        super();
-
-        this.toggleMobileClasses = () => {
-            let hamburgerIcon = document.getElementById('burger');
-            hamburgerIcon.classList.toggle('is-active');
-            let mobileMenu = document.getElementById('menu-container');
-            mobileMenu.classList.toggle('opened');
-        }
-    }
-        render() {
+const toggleMobileClasses = () => {
+    let hamburgerIcon = document.getElementById('burger');
+    hamburgerIcon.classList.toggle('is-active');
+    let mobileMenu = document.getElementById('menu-container');
+    mobileMenu.classList.toggle('opened');
+}
+const Menu = () => {
             return (
                 <div>
-                    <div id={'burger'} className="burger" onClick={this.toggleMobileClasses}>
+                    <div id={'burger'} className="burger" onClick={toggleMobileClasses}>
                         <div className="lines">
                             <div className="line"></div>
                             <div className="line"></div>
@@ -31,5 +26,5 @@ class Menu extends Component {
                 </div>
             );
         }
-    }
+
 export default Menu;
