@@ -19,8 +19,7 @@ const Select = props => {
     const getSelectView = () => {
         return (
             <select onChange={handleChange}>
-                {
-                    props.breedsList.map((breed, index) => {
+                {props.breedsList.map((breed, index) => {
                         return(
                             <option value={breed} key={index}>{breed}</option>
                         );
@@ -29,8 +28,6 @@ const Select = props => {
             </select>
         )
     }
-
-
 
     return(
         <div className="select-container">
