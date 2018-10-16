@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import './App.css';
 import Menu from './components/menu/Menu';
 import Select from './components/select/Select';
@@ -44,11 +45,19 @@ class App extends Component {
         return (
             <div className="App">
                 <Menu/>
-                <Select breedsList={this.state.breedsList} onSelect={this.selectHandler} isError={this.state.error}/>
-                <BreedImage breed={this.state.selectedBreed}/>
+                <Select breedsList={this.props.brdsList} onSelect={this.selectHandler} isError={this.props.er}/>
+                <BreedImage breed={this.props.slctBreed}/>
             </div>
         );
     }
 }
 
-export default App;
+const mapStateToProps = state => {
+    return {
+        brdsList:  state.breedsList,
+        slctBreed: state.selectedBreed,
+        er: state.error
+    };
+}
+
+export default connect(mapStateToProps)(App);
