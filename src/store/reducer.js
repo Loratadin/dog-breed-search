@@ -1,13 +1,16 @@
 const initialState = {
-    breedsList: null,
-    selectedBreed: null,
-    error: false,
-    imageUrl: require('../../assets/custom.jpg'),
     selectedBreed: null
 }
 
-const reducer = (state = initialState, action) => {
-    return state;
-}
+const reducer =
+     function selectBreed(state = initialState, action) {
+        if (action.type === 'SELECT_BREED') {
+            return {
+                selectedBreed: state.breed
+            };
+        }
+        return state;
+     }
+    
 
 export default reducer;

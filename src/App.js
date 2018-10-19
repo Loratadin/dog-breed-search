@@ -41,23 +41,25 @@ class App extends Component {
         })
     }
     render( ) {
-        console.log(this.state.selectedBreed);
         return (
-            <div className="App">
-                <Menu/>
-                <Select breedsList={this.props.brdsList} onSelect={this.selectHandler} isError={this.props.er}/>
-                <BreedImage breed={this.props.slctBreed}/>
-            </div>
+                <div className="App">
+                    <Menu/>
+                    <Select breedsList={this.props.brdsList} onSelect={this.props.onSelectHandler} isError={this.props.er}/>
+                    <BreedImage breed={this.props.slctBreed}/>
+                </div>
         );
     }
 }
 
 const mapStateToProps = state => {
     return {
-        brdsList:  state.breedsList,
         slctBreed: state.selectedBreed,
-        er: state.error
+    };
+}
+const mapDispatchToProps = dispatch => {
+    return {
+        onSelectHandler: () => dispatch ({type: 'SELECT_BREED'})
     };
 }
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
