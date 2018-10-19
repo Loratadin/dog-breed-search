@@ -6,11 +6,7 @@ import Select from './components/select/Select';
 import BreedImage from './components/breed-image/BreedImage';
 
 class App extends Component {
-    state = {
-        breedsList: null,
-        selectedBreed: null,
-        error: false
-    }
+
     componentDidMount() {
         this.fetchAllBreeds();
     }
