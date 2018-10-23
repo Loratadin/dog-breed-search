@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { fetchBreeds } from './actions/postActions';
 import './App.css';
 import Menu from './components/menu/Menu';
 import Select from './components/select/Select';
