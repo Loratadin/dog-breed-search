@@ -1,27 +1,24 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import './select.css';
 import '../breed-image/breed-image.css';
 
 const loadingGif = './assets/loading.gif';
 
-const Select = props => {
+class Select extends Component {
 
-    const handleChange = (event) => {
-        props.onSelect(event.target.value);
-    }
-
-    const getLoadingView = () => {
+    getLoadingView() {
         return <div className="loading"><img className="loading-gif" alt="Loading..." src={loadingGif}/></div>
     }
 
-    const getErrorView = () => {
+    getErrorView() {
         return alert('Sorry, can not load the data')
     }
 
-    const getSelectView = () => {
+    getSelectView() {
         return (
-            <select onChange={handleChange}>
-                {props.breedsList.map((breed, index) => {
+            <select onChange={(breed) => this.props.onSelectHandler(breed)}>
+                {this.props.brList.map((breed, index) => {
                         return(
                             <option value={breed} key={index}>{breed}</option>
                         );
@@ -30,13 +27,27 @@ const Select = props => {
             </select>
         )
     }
-
-    return(
-        <div className="select-container">
-            {props.breedsList ? getSelectView() : getLoadingView()}
-            {props.isError ? getErrorView() : null}
-        </div>
-    );
+    render() {
+        return(
+            <div className="select-container">
+                {this.props.brList ? this.getSelectView() : this.getLoadingView()}
+                {this.props.er ? this.getErrorView() : null}
+            </div>
+        );
+    }
 }
 
-export default Select;
+const mapStateToProps = state => {
+    return {
+        brList: state.breedsList,
+        selBreed: state.selectedBreed,
+        er: state.error
+    };
+}
+const mapDispatchToProps = dispatch => {
+    return {
+        onSelectHandler: (breed) => dispatch ({type: 'SELECT_BREED', payload: {selectedBreed: breed}})
+    };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps )(Select);
