@@ -6,18 +6,12 @@ import Select from './components/select/Select';
 import BreedImage from './components/breed-image/BreedImage';
 
 class App extends Component {
-
-    selectHandler = (breed) => {
-        this.setState({
-            selectedBreed: breed
-        })
-    }
     render( ) {
         return (
-                <div className="App">
+            <div className="App">
                     <Menu/>
-                    <Select breedsList={this.props.brList} onSelect={this.props.onSelectHandler} isError={this.props.er}/>
-                    <BreedImage breed={this.props.slctBreed}/>
+                    <Select breedsList={this.props.brList} onSelect={(breed) => this.props.onSelectHandler(breed)} isError={this.props.er}/>
+                    <BreedImage breed={this.props.selBreed}/>
                 </div>
         );
     }
@@ -27,12 +21,12 @@ const mapStateToProps = state => {
     return {
         brList: state.breedsList,
         selBreed: state.selectedBreed,
-        iUrl: state.imageUrl,
+        er: state.error
     };
 }
 const mapDispatchToProps = dispatch => {
     return {
-        onSelectHandler: () => dispatch ({type: 'SELECT_BREED'})
+        onSelectHandler: (breed) => dispatch ({type: 'SELECT_BREED', payload: {selectedBreed: breed}})
     };
 }
 

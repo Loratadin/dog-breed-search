@@ -2,6 +2,8 @@ import React from 'react';
 import './select.css';
 import '../breed-image/breed-image.css';
 
+const loadingGif = './assets/loading.gif';
+
 const Select = props => {
 
     const handleChange = (event) => {
@@ -9,7 +11,7 @@ const Select = props => {
     }
 
     const getLoadingView = () => {
-        return <div className="loading"><img className="loading-gif" alt="Loading..." src={require('../../assets/loading.gif')}/></div>
+        return <div className="loading"><img className="loading-gif" alt="Loading..." src={loadingGif}/></div>
     }
 
     const getErrorView = () => {

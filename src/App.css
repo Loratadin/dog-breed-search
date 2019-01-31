@@ -2,7 +2,7 @@
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-image: url("./assets/background.jpg");
+  background-image: url("https://s3.amazonaws.com/projects.loratadin.com/react-dog-app-tutorial/static/media/background.8316c3d0.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
