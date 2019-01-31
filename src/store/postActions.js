@@ -1,4 +1,4 @@
-import { FETCH_BREEDS, FETCH_IMAGES } from '../actions/types';
+import { FETCH_BREEDS, FETCH_IMAGES } from './actions';
 
 export const fetchBreeds = ()  => async dispatch => {
     try { // try to get data

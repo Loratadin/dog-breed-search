@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchBreeds } from './actions/postActions';
 import './App.css';
 import Menu from './components/menu/Menu';
 import Select from './components/select/Select';
@@ -17,7 +16,7 @@ class App extends Component {
         return (
                 <div className="App">
                     <Menu/>
-                    <Select breedsList={this.props.brdsList} onSelect={this.props.onSelectHandler} isError={this.props.er}/>
+                    <Select breedsList={this.props.brList} onSelect={this.props.onSelectHandler} isError={this.props.er}/>
                     <BreedImage breed={this.props.slctBreed}/>
                 </div>
         );
@@ -26,7 +25,9 @@ class App extends Component {
 
 const mapStateToProps = state => {
     return {
-        slctBreed: state.selectedBreed,
+        brList: state.breedsList,
+        selBreed: state.selectedBreed,
+        iUrl: state.imageUrl,
     };
 }
 const mapDispatchToProps = dispatch => {

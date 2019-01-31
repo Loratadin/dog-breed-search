@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import './breed-image.css';
 
+const customImage = './assets/custom.jpg';
 class BreedImage extends Component {
   state = {
-    imageUrl: require('../../assets/custom.jpg'),
+    imageUrl: customImage,
     selectedBreed: null
   };
   componentDidUpdate() {
