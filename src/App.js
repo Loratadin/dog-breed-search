@@ -6,9 +6,24 @@ import Menu from './components/menu/Menu';
 import Select from './components/select/Select';
 import BreedImage from './components/breed-image/BreedImage';
 
+const mapStateToProps = state => {
+    return {
+        brList: state.breedsList,
+        selBreed: state.selectedBreed,
+        er: state.error
+    };
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        getBreedsList: () => dispatch(requestBreeds()),
+        onSelectHandler: (breed) => dispatch ({type: 'SELECT_BREED', payload: {selectedBreed: breed}})
+    };
+}
+
 class App extends Component {
     componentDidMount() {
-        console.log("App Breeds", this.props.brList)
+        console.log("getter", this.props.getBreedsList())
         if (this.props.brList.length === 0) {
             this.props.getBreedsList();
         }
@@ -24,20 +39,6 @@ class App extends Component {
                 </div>
         );
     }
-}
-
-const mapStateToProps = state => {
-    return {
-        brList: state.breedsList,
-        selBreed: state.selectedBreed,
-        er: state.error
-    };
-}
-const mapDispatchToProps = dispatch => {
-    return {
-        getBreedsList: () => dispatch(requestBreeds()),
-        onSelectHandler: (breed) => dispatch ({type: 'SELECT_BREED', payload: {selectedBreed: breed}})
-    };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

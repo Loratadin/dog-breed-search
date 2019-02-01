@@ -1,12 +1,11 @@
 export const FETCH_BREEDS = 'FETCH_BREEDS';
 export const RECEIVE_BREEDS = 'RECEIVE_BREEDS';
-export const FETCH_IMAGES = 'FETCH_IMAGES';
-export const RECEIVE_IMAGES = 'RECEIVE_IMAGES';
+export const FETCH_IMAGE = 'FETCH_IMAGE';
+export const RECEIVE_IMAGE = 'RECEIVE_IMAGE';
 export const SELECT_BREED = 'SELECT_BREED';
 
-export const requestBreeds = payload => ({
+export const requestBreeds = () => ({
     type: FETCH_BREEDS,
-    payload: payload
 });
 
 export const receiveBreeds = payload => ({
@@ -14,12 +13,12 @@ export const receiveBreeds = payload => ({
     payload: payload
 });
 
-export const requestImages = payload => ({
-    type: FETCH_IMAGES,
+export const requestImage = payload => ({
+    type: FETCH_IMAGE,
     payload: payload
 });
 
-export const receiveImages = payload => ({
-    type: RECEIVE_IMAGES,
+export const receiveImage = payload => ({
+    type: RECEIVE_IMAGE,
     payload: payload
 });

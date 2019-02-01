@@ -1,11 +1,11 @@
 import { call, put } from "redux-saga/effects";
 import { fetchImageAPI } from "../api/fetchImageAPI";
-import { receiveImages } from './store/actions';
+import { receiveImage } from '../store/actions';
 
-export default function* requestImagesSaga(action) {
+export default function* requestImageSaga(action) {
     try {
         const data = yield call(fetchImageAPI);
-        yield put(receiveImages(data));
+        yield put(receiveImage(data));
     } catch (e) {
         console.log(e);
     }

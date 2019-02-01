@@ -11,7 +11,7 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
     switch(action.type) {
-        case actionTypes.FETCH_BREEDS:
+        case actionTypes.RECEIVE_BREEDS:
             return {
                 ...state,
                 breedsList: action.payload
@@ -21,7 +21,7 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 selectedBreed: action.payload,
             }
-        case actionTypes.FETCH_IMAGES:
+        case actionTypes.FETCH_IMAGE:
             return {
                 ...state,
                 imageUrl: action.payload
