@@ -1,27 +1,39 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import {receiveImage} from '../../store/actions';
 import './breed-image.css';
-
-class BreedImage extends Component {
-	
-	render() {
-		return (
-			<div className="image-container">
-				<img className="image-card" alt="dog" src={this.props.iUrl} />
-			</div>
-		);
-	}
-}
 
 const mapStateToProps = state => {
 	return {
 		iUrl: state.imageUrl,
+		selBreed: state.selectedBreed,
+        er: state.error
 	};
 }
 const mapDispatchToProps = dispatch => {
 	return {
-		onSelectHandler: (breed) => dispatch({ type: 'SELECT_BREED', payload: { selectedBreed: breed } })
+		getImage: (selBreed) => dispatch(receiveImage(selBreed)),
 	};
+}
+
+class BreedImage extends Component {
+
+	componentDidUpdate() { 
+		if (this.props.selBreed !== " ") {
+			this.props.getImage(this.props.selBreed);
+		  }
+	}
+
+	render() {
+		return (
+			<div className="image-container">
+				<img
+					className="image-card"
+					alt="dog" src={this.props.iUrl}
+				/>
+			</div>
+		);
+	}
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(BreedImage);

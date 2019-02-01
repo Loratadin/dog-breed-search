@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {requestBreeds} from '../../store/actions';
+import {requestBreeds, requestImage} from '../../store/actions';
 import './select.css';
 import '../breed-image/breed-image.css';
 
@@ -17,17 +17,23 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         getBreedsList: () => dispatch(requestBreeds()),
-        onSelectHandler: (breed) => dispatch ({type: 'SELECT_BREED', payload: {selectedBreed: breed}})
+        onSelectHandler: (event) => {
+            console.log("Breed", event.target.value)
+            dispatch(requestImage(event))
+        },
     };
 }
 class Select extends Component {
 
     componentDidMount() {
-        console.log(this.props.brList)
         if (this.props.brList.length === 0) {
             this.props.getBreedsList();
         }
     }
+
+    componentDidUpdate() { 
+		
+	}
 
     getLoadingView() {
         return <div className="loading"><img className="loading-gif" alt="Loading..." src={loadingGif}/></div>
@@ -39,7 +45,9 @@ class Select extends Component {
 
     getSelectView() {
         return (
-            <select onChange={(breed) => this.props.onSelectHandler(breed)}>
+            <select
+                onChange={(event) =>  this.props.onSelectHandler(event)}
+            >
                 {this.props.brList.map((breed, index) => {
                         return(
                             <option value={breed} key={index}>{breed}</option>

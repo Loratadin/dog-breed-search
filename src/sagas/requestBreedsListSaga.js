@@ -7,6 +7,6 @@ export default function* requestBreedsSaga(action) {
         const data = yield call(fetchBreedsListAPI);
         yield put(receiveBreeds(data));
     } catch (e) {
-        console.log(e);
+        
     }
 }

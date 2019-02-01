@@ -16,12 +16,12 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 breedsList: action.payload
             }
-        case actionTypes.SELECT_BREED:
+        case actionTypes.FETCH_IMAGE:
             return {
                 ...state,
-                selectedBreed: action.payload,
+                selectedBreed: action.selectedBreed,
             }
-        case actionTypes.FETCH_IMAGE:
+        case actionTypes.RECEIVE_IMAGE:
             return {
                 ...state,
                 imageUrl: action.payload

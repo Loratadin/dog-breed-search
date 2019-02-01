@@ -7,6 +7,6 @@ export default function* requestImageSaga(action) {
         const data = yield call(fetchImageAPI);
         yield put(receiveImage(data));
     } catch (e) {
-        console.log(e);
+       
     }
 }
