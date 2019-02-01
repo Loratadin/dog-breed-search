@@ -1,11 +1,33 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import {requestBreeds} from '../../store/actions';
 import './select.css';
 import '../breed-image/breed-image.css';
 
 const loadingGif = './assets/loading.gif';
 
+const mapStateToProps = state => {
+    return {
+        brList: state.breedsList,
+        selBreed: state.selectedBreed,
+        er: state.error
+    };
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        getBreedsList: () => dispatch(requestBreeds()),
+        onSelectHandler: (breed) => dispatch ({type: 'SELECT_BREED', payload: {selectedBreed: breed}})
+    };
+}
 class Select extends Component {
+
+    componentDidMount() {
+        console.log(this.props.brList)
+        if (this.props.brList.length === 0) {
+            this.props.getBreedsList();
+        }
+    }
 
     getLoadingView() {
         return <div className="loading"><img className="loading-gif" alt="Loading..." src={loadingGif}/></div>
@@ -35,19 +57,6 @@ class Select extends Component {
             </div>
         );
     }
-}
-
-const mapStateToProps = state => {
-    return {
-        brList: state.breedsList,
-        selBreed: state.selectedBreed,
-        er: state.error
-    };
-}
-const mapDispatchToProps = dispatch => {
-    return {
-        onSelectHandler: (breed) => dispatch ({type: 'SELECT_BREED', payload: {selectedBreed: breed}})
-    };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps )(Select);

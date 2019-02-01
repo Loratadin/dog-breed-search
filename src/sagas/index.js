@@ -1,7 +1,7 @@
 import {takeEvery, all} from "redux-saga/effects";
-import {FETCH_BREEDS, FETCH_IMAGES} from "./store/actions";
+import {FETCH_BREEDS, FETCH_IMAGES} from "../store/actions";
 import requestBreedsListSaga from "./requestBreedsListSaga";
-import requestImagesSaga from "./requestImagesSaga";
+import requestImagesSaga from "./requestImageSaga";
 
 function* fetch() {
   yield takeEvery(FETCH_BREEDS, requestBreedsListSaga);

@@ -3,8 +3,8 @@ import * as actionTypes from './actions';
 const customImage = './assets/custom.jpg';
 
 const initialState = {
-    breedsList: null,
-    selectedBreed: null,
+    breedsList: [],
+    selectedBreed: " ",
     imageUrl: customImage,
     error: false
 }

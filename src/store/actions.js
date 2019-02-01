@@ -2,6 +2,7 @@ export const FETCH_BREEDS = 'FETCH_BREEDS';
 export const RECEIVE_BREEDS = 'RECEIVE_BREEDS';
 export const FETCH_IMAGES = 'FETCH_IMAGES';
 export const RECEIVE_IMAGES = 'RECEIVE_IMAGES';
+export const SELECT_BREED = 'SELECT_BREED';
 
 export const requestBreeds = payload => ({
     type: FETCH_BREEDS,

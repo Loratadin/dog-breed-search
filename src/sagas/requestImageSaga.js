@@ -1,5 +1,5 @@
 import { call, put } from "redux-saga/effects";
-import { fetchImageAPI } from "./api/fetchImageAPI";
+import { fetchImageAPI } from "../api/fetchImageAPI";
 import { receiveImages } from './store/actions';
 
 export default function* requestImagesSaga(action) {
