@@ -2,6 +2,7 @@ export const FETCH_BREEDS = 'FETCH_BREEDS';
 export const RECEIVE_BREEDS = 'RECEIVE_BREEDS';
 export const FETCH_IMAGE = 'FETCH_IMAGE';
 export const RECEIVE_IMAGE = 'RECEIVE_IMAGE';
+export const SELECT_BREED = 'SELECT_BREED';
 
 export const requestBreeds = () => ({
     type: FETCH_BREEDS,
@@ -12,9 +13,18 @@ export const receiveBreeds = payload => ({
     payload: payload
 });
 
-export const requestImage = event => ({
-    type: FETCH_IMAGE,
+export const selectImage = event => ({
+    type: SELECT_BREED,
     selectedBreed: event.target.value
+});
+
+// export const requestImage = event => ({
+//     type: FETCH_IMAGE,
+//     selectedBreed: event.target.value
+// });
+
+export const requestImage = () => ({
+    type: FETCH_IMAGE,
 });
 
 export const receiveImage = payload => ({

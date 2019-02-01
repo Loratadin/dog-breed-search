@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {requestBreeds, requestImage} from '../../store/actions';
+import {requestBreeds, requestImage, selectImage} from '../../store/actions';
 import './select.css';
 import '../breed-image/breed-image.css';
 
@@ -18,9 +18,12 @@ const mapDispatchToProps = dispatch => {
     return {
         getBreedsList: () => dispatch(requestBreeds()),
         onSelectHandler: (event) => {
-            console.log("Breed", event.target.value)
-            dispatch(requestImage(event))
+            console.log("Breed", event.target.value),
+            dispatch(selectImage(event))
+            // dispatch(requestImage())
         },
+        askForImage: (breed) => dispatch(requestImage(breed)),
+        // onSelectHandler: () => dispatch(requestImage()),
     };
 }
 class Select extends Component {
@@ -31,8 +34,8 @@ class Select extends Component {
         }
     }
 
-    componentDidUpdate() { 
-		
+    componentDidUpdate(prevProps) {
+		prevProps.selBreed !== this.props.selBreed && this.props.askForImage(this.props.selBreed)
 	}
 
     getLoadingView() {

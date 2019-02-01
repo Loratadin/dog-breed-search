@@ -18,15 +18,12 @@ const mapDispatchToProps = dispatch => {
 
 class BreedImage extends Component {
 
-	componentDidUpdate() { 
-		if (this.props.selBreed !== " ") {
-			this.props.getImage(this.props.selBreed);
-			console.log("I got selected breed:", this.props.selBreed)
-		}
+	 componentDidUpdate(prevProps) {
+		prevProps.selBreed !== this.props.selBreed && this.props.getImage(this.props.selBreed)
 	}
 
 	render() {
-		
+		console.log("I got selected breed", this.props.selBreed )
 		return (
 			<div className="image-container">
 				<img
