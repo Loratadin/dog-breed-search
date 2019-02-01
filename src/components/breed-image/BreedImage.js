@@ -12,7 +12,7 @@ const mapStateToProps = state => {
 }
 const mapDispatchToProps = dispatch => {
 	return {
-		getImage: (selBreed) => dispatch(receiveImage(selBreed)),
+		getImage: () => dispatch(receiveImage()),
 	};
 }
 
@@ -21,10 +21,12 @@ class BreedImage extends Component {
 	componentDidUpdate() { 
 		if (this.props.selBreed !== " ") {
 			this.props.getImage(this.props.selBreed);
-		  }
+			console.log("I got selected breed:", this.props.selBreed)
+		}
 	}
 
 	render() {
+		
 		return (
 			<div className="image-container">
 				<img

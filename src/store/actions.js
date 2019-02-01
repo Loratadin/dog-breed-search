@@ -14,10 +14,10 @@ export const receiveBreeds = payload => ({
 
 export const requestImage = event => ({
     type: FETCH_IMAGE,
-    selectedBreed: event.target.value,
+    selectedBreed: event.target.value
 });
 
 export const receiveImage = payload => ({
     type: RECEIVE_IMAGE,
-    imageUrl: payload
+    payload: payload
 });

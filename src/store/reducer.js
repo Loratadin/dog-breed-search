@@ -19,7 +19,7 @@ const reducer = (state = initialState, action) => {
         case actionTypes.FETCH_IMAGE:
             return {
                 ...state,
-                selectedBreed: action.selectedBreed,
+                selectedBreed: action.selectedBreed
             }
         case actionTypes.RECEIVE_IMAGE:
             return {
