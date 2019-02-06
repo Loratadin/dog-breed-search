@@ -20,10 +20,8 @@ const mapDispatchToProps = dispatch => {
         onSelectHandler: (event) => {
             console.log("Breed", event.target.value),
             dispatch(selectImage(event))
-            // dispatch(requestImage())
         },
         askForImage: (breed) => dispatch(requestImage(breed)),
-        // onSelectHandler: () => dispatch(requestImage()),
     };
 }
 class Select extends Component {
