@@ -18,11 +18,6 @@ export const selectImage = event => ({
     selectedBreed: event.target.value
 });
 
-// export const requestImage = event => ({
-//     type: FETCH_IMAGE,
-//     selectedBreed: event.target.value
-// });
-
 export const requestImage = () => ({
     type: FETCH_IMAGE,
 });
